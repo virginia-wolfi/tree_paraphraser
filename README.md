@@ -38,4 +38,8 @@ Now head over to
 127.0.0.1:5000
 ```
 
+or 
+```
+localhost:<port>
+```
 and you should see API documented with Swagger.

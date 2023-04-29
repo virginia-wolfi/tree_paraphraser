@@ -1,4 +1,4 @@
-from flask import Flask, make_response
+from flask import Flask, jsonify
 from flask_restx import Api, Resource, abort, reqparse
 from logics import *
 
@@ -40,7 +40,7 @@ class TreeParaphraser(Resource):
         output = []
         for i in res[:limit]:
             output.append({"tree": " ".join(str(i).split())})
-        return make_response({"paraphrases": output})
+        return jsonify({"paraphrases": output})
 
 
 if __name__ == "__main__":
