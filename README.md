@@ -7,7 +7,7 @@ Microservice that generates permutations in the syntax tree.
 Clone repository 
 
 ```
-$ git clone https://github.com/virginia-wolfi/tree.git
+$ git clone https://github.com/virginia-wolfi/tree_paraphraser.git
 ```
 
 Install the dependencies and start the server.
