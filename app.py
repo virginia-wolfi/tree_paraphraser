@@ -22,7 +22,6 @@ parser = reqparse.RequestParser()
 parser.add_argument("tree", type=str, location="args", required=True, default=example)
 parser.add_argument("limit", type=int, location="args", default=20)
 
-
 @api.route("/paraphrase")
 class TreeParaphraser(Resource):
     """Get paraphrased versions of bracketed tree string"""

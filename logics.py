@@ -77,6 +77,7 @@ def pull_list(tree):
     Args:
         tree (nltk.Tree) -- tree to handle
     Returns:
+        tree_list (list)
 
     """
     tree_list = []
