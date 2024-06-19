@@ -30,14 +30,14 @@ class TreeParaphraser(Resource):
     @api.doc(responses={200: "Success", 400: "Validation Error"})
     def get(self):
         args = parser.parse_args()
-        tree = nltk.ParentedTree.fromstring(args.get("tree"))
         limit = args.get("limit", 20)
-        res = pull_list(tree)
-        res.pop(0)
-        if len(res) == 0:
+        converted_tree = PermutedSyntaxTree(args.get("tree"))
+        permuted_trees = converted_tree.get_all_tree_permutations()
+        permuted_trees.pop(0)
+        if len(permuted_trees) == 0:
             abort(400, "Can't paraphrase")
         output = []
-        for i in res[:limit]:
+        for i in permuted_trees[:limit]:
             output.append({"tree": " ".join(str(i).split())})
         return jsonify({"paraphrases": output})
 
